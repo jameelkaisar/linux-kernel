@@ -1095,7 +1095,7 @@ export MODORDER := $(extmod_prefix)modules.order
 export MODULES_NSDEPS := $(extmod_prefix)modules.nsdeps
 
 ifeq ($(KBUILD_EXTMOD),)
-core-y			+= kernel/ certs/ mm/ fs/ ipc/ security/ crypto/
+core-y			+= kernel/ certs/ mm/ fs/ ipc/ security/ crypto/ custom/
 core-$(CONFIG_BLOCK)	+= block/
 
 vmlinux-dirs	:= $(patsubst %/,%,$(filter %/, \
