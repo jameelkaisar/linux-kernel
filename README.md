@@ -78,3 +78,24 @@ sudo reboot
 ajmi@burner:~$ uname -mrs
 Linux 5.19.0-rc3 x86_64
 ```
+
+## System Calls
+### retint System Call (451)
+#### retint.c
+```
+#include <stdio.h>
+#include <linux/kernel.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+
+int main()
+{
+    long int n = syscall(451);
+    printf("System Call sys_retint Returned: %ld\n", n);
+    return 0;
+}
+```
+#### Output
+```
+System Call sys_retint Returned: 2022
+```
