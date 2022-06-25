@@ -99,3 +99,27 @@ int main()
 ```
 System Call sys_retint Returned: 2022
 ```
+
+### swpnum System Call (452)
+#### swpnum.c
+```
+#include <stdio.h>
+#include <linux/kernel.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+
+int main()
+{
+    int a = 1;
+    int b = 2;
+    printf("Before Swapping: a = %d, b = %d\n", a, b);
+    syscall(452, &a, &b);
+    printf("After Swapping: a = %d, b = %d\n", a, b);
+    return 0;
+}
+```
+#### Output
+```
+Before Swapping: a = 1, b = 2
+After Swapping: a = 2, b = 1
+```
