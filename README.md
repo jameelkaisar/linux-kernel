@@ -82,7 +82,7 @@ Linux 5.19.0-rc3 x86_64
 ## System Calls
 ### retint System Call (451)
 #### retint.c
-```
+```c
 #include <stdio.h>
 #include <linux/kernel.h>
 #include <sys/syscall.h>
@@ -102,7 +102,7 @@ System Call sys_retint Returned: 2022
 
 ### swpnum System Call (452)
 #### swpnum.c
-```
+```c
 #include <stdio.h>
 #include <linux/kernel.h>
 #include <sys/syscall.h>
