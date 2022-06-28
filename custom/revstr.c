@@ -14,8 +14,8 @@ SYSCALL_DEFINE2(revstr, char *, str, int, n)
     if (res < 0) return -EFAULT;
     x = strnlen_user(str, n) - 1;
     for (int i=0; i<x/2; i++) {
-        t = *(s+i);
-        *(s+i) = *(s + x-1 - i);
+        t = *(s + i);
+        *(s + i) = *(s + x-1 - i);
         *(s + x-1 - i) = t;
     }
     res = copy_to_user(str, s, n);
