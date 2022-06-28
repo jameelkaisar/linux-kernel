@@ -1387,4 +1387,5 @@ int __sys_setsockopt(int fd, int level, int optname, char __user *optval,
 		int optlen);
 asmlinkage long sys_retint(void);
 asmlinkage long sys_swpnum(int * a, int * b);
+asmlinkage long sys_revstr(char * str, int n);
 #endif
