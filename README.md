@@ -180,3 +180,34 @@ int main()
 Initial Array: 1 2 3 4 5 6 7 
 Copied Array: 1 2 3 4 5 6 7 
 ```
+
+### swpsrt System Call (455)
+Swap members of structure using a system call
+#### swpsrt.c
+```c
+#include <stdio.h>
+#include <linux/kernel.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+
+struct swap_srt {
+    int a;
+    int b;
+};
+
+int main()
+{
+    struct swap_srt s;
+    s.a = 1;
+    s.b = 2;
+    printf("Before Swapping: s.a = %d, s.b = %d\n", s.a, s.b);
+    syscall(455, &s);
+    printf("After Swapping: s.a = %d, s.b = %d\n", s.a, s.b);
+    return 0;
+}
+```
+#### Output
+```
+Before Swapping: s.a = 1, s.b = 2
+After Swapping: s.a = 2, s.b = 1
+```
