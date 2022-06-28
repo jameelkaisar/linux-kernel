@@ -81,6 +81,7 @@ Linux 5.19.0-rc3 x86_64
 
 ## System Calls
 ### retint System Call (451)
+Return number from a system call
 #### retint.c
 ```c
 #include <stdio.h>
@@ -101,6 +102,7 @@ System Call sys_retint Returned: 2022
 ```
 
 ### swpnum System Call (452)
+Swap numbers using a system call
 #### swpnum.c
 ```c
 #include <stdio.h>
