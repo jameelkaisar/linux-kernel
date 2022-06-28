@@ -125,3 +125,28 @@ int main()
 Before Swapping: a = 1, b = 2
 After Swapping: a = 2, b = 1
 ```
+
+
+### revstr System Call (453)
+Reverse string using a system call
+#### revstr.c
+```c
+#include <stdio.h>
+#include <linux/kernel.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+
+int main()
+{
+    char s[10] = "abcdefg";
+    printf("Before Reversing: %s\n", s);
+    syscall(453, s, 10);
+    printf("After Reversing: %s\n", s);
+    return 0;
+}
+```
+#### Output
+```
+Before Reversing: abcdefg
+After Reversing: gfedcba
+```
