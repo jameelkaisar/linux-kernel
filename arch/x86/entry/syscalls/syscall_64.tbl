@@ -377,6 +377,7 @@
 453     common  revstr                  sys_revstr
 454     common  cpyarr                  sys_cpyarr
 455     common  swpsrt                  sys_swpsrt
+456     common  revsrt                  sys_revsrt
 
 #
 # Due to a historical design error, certain syscalls are numbered differently
