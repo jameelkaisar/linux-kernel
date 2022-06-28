@@ -20,5 +20,6 @@ SYSCALL_DEFINE2(revstr, char *, str, int, n)
     }
     res = copy_to_user(str, s, n);
     if (res < 0) return -EFAULT;
+    kfree(s);
     return 0;
 }
