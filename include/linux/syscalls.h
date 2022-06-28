@@ -72,6 +72,7 @@ struct open_how;
 struct mount_attr;
 struct landlock_ruleset_attr;
 enum landlock_rule_type;
+struct swap_srt;
 
 #include <linux/types.h>
 #include <linux/aio_abi.h>
@@ -1389,4 +1390,5 @@ asmlinkage long sys_retint(void);
 asmlinkage long sys_swpnum(int * a, int * b);
 asmlinkage long sys_revstr(char * str, int n);
 asmlinkage long sys_cpyarr(int * s, int * t, int n);
+asmlinkage long sys_swpsrt(struct swap_srt * srt);
 #endif
