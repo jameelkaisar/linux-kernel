@@ -211,3 +211,43 @@ int main()
 Before Swapping: s.a = 1, s.b = 2
 After Swapping: s.a = 2, s.b = 1
 ```
+
+### revsrt System Call (456)
+Reverse array in structure using a system call
+#### revsrt.c
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <linux/kernel.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+
+struct reverse_srt {
+    int *arr;
+    int n;
+};
+
+int main()
+{
+    struct reverse_srt s;
+    s.n = 7;
+    s.arr = malloc(s.n * sizeof(int));
+    for (int i=0; i<s.n; i++)
+        s.arr[i] = i+1;
+    printf("Before Reversing: ");
+    for (int i=0; i<7; i++)
+        printf("%d ", s.arr[i]);
+    printf("\n");
+    syscall(456, &s);
+    printf("After Reversing: ");
+    for (int i=0; i<7; i++)
+        printf("%d ", s.arr[i]);
+    printf("\n");
+    return 0;
+}
+```
+#### Output
+```
+Before Reversing: 1 2 3 4 5 6 7 
+After Reversing: 7 6 5 4 3 2 1 
+```
