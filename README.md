@@ -126,7 +126,6 @@ Before Swapping: a = 1, b = 2
 After Swapping: a = 2, b = 1
 ```
 
-
 ### revstr System Call (453)
 Reverse string using a system call
 #### revstr.c
@@ -149,4 +148,35 @@ int main()
 ```
 Before Reversing: abcdefg
 After Reversing: gfedcba
+```
+
+### cpyarr System Call (454)
+Copy array using a system call
+#### cpyarr.c
+```c
+#include <stdio.h>
+#include <linux/kernel.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+
+int main()
+{
+    int a[7] = {1, 2, 3, 4, 5, 6, 7};
+    int b[7];
+    printf("Initial Array: ");
+    for (int i=0; i<7; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    syscall(454, a, b, 7);
+    printf("Copied Array: ");
+    for (int i=0; i<7; i++)
+        printf("%d ", b[i]);
+    printf("\n");
+    return 0;
+}
+```
+#### Output
+```
+Initial Array: 1 2 3 4 5 6 7 
+Copied Array: 1 2 3 4 5 6 7 
 ```
