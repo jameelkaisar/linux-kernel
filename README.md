@@ -51,6 +51,7 @@ sudo make -j$(nproc)
 ```
 sleep 5 && echo start > ~/start.txt && sudo make -j$(nproc) > ~/logs.txt 2> ~/errors.txt && echo success > ~/success.txt || echo fail > ~/fail.txt & disown
 ```
+- Turns out we can use `screen` window manager instead of using the so-called Secret Command. `screen` can be installed using `sudo apt install screen`.
 
 ### Install Linux Kernel Modules
 ```
